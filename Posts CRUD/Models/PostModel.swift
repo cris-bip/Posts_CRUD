@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PostEntity : Codable{
+struct PostModel : Codable{
     let userId : Int32
     let id : Int32
     let title : String

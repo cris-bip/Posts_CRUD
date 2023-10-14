@@ -15,8 +15,7 @@
 		C263F5FF2ADB1C1F001E102D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C263F5FD2ADB1C1F001E102D /* LaunchScreen.storyboard */; };
 		C263F60D2ADB1F0F001E102D /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C263F60C2ADB1F0F001E102D /* PostsTableViewController.swift */; };
 		C263F60F2ADB20D9001E102D /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C263F60E2ADB20D9001E102D /* PostService.swift */; };
-		C263F6132ADB21D5001E102D /* PostEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C263F6122ADB21D5001E102D /* PostEntity.swift */; };
-		C263F6152ADB22D4001E102D /* PostsListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C263F6142ADB22D4001E102D /* PostsListResponse.swift */; };
+		C263F6132ADB21D5001E102D /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C263F6122ADB21D5001E102D /* PostModel.swift */; };
 		C263F6182ADB2B91001E102D /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C263F6172ADB2B91001E102D /* AppConstants.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,8 +30,7 @@
 		C263F6002ADB1C1F001E102D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C263F60C2ADB1F0F001E102D /* PostsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
 		C263F60E2ADB20D9001E102D /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
-		C263F6122ADB21D5001E102D /* PostEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEntity.swift; sourceTree = "<group>"; };
-		C263F6142ADB22D4001E102D /* PostsListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListResponse.swift; sourceTree = "<group>"; };
+		C263F6122ADB21D5001E102D /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		C263F6172ADB2B91001E102D /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,8 +114,7 @@
 		C263F6102ADB2105001E102D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C263F6122ADB21D5001E102D /* PostEntity.swift */,
-				C263F6142ADB22D4001E102D /* PostsListResponse.swift */,
+				C263F6122ADB21D5001E102D /* PostModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -194,12 +191,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C263F60F2ADB20D9001E102D /* PostService.swift in Sources */,
-				C263F6152ADB22D4001E102D /* PostsListResponse.swift in Sources */,
 				C263F5FA2ADB1C1C001E102D /* Posts_CRUD.xcdatamodeld in Sources */,
 				C263F6182ADB2B91001E102D /* AppConstants.swift in Sources */,
 				C263F60D2ADB1F0F001E102D /* PostsTableViewController.swift in Sources */,
 				C263F5F02ADB1C1C001E102D /* AppDelegate.swift in Sources */,
-				C263F6132ADB21D5001E102D /* PostEntity.swift in Sources */,
+				C263F6132ADB21D5001E102D /* PostModel.swift in Sources */,
 				C263F5F22ADB1C1C001E102D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,9 +8,9 @@
 import UIKit
 
 class PostService {
-    private var posts : [PostEntity] = []
+    private var posts : [PostModel] = []
     
-    func getPost(atIndex index: Int) -> PostEntity{
+    func getPost(atIndex index: Int) -> PostModel{
         return posts[index]
     }
     
@@ -47,7 +47,7 @@ class PostService {
             }
             
             do{
-                let decodedResponse = try JSONDecoder().decode([PostEntity].self, from: data)
+                let decodedResponse = try JSONDecoder().decode([PostModel].self, from: data)
                 
                 for post in decodedResponse{
                     self.posts.append(post)
