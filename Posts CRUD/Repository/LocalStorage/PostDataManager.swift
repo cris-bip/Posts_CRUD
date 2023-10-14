@@ -67,4 +67,16 @@ class PostDataManager{
             return nil
         }
     }
+    
+    func deletePost(post : Post) -> Bool {
+        self.context.delete(post)
+        
+        do{
+            try context.save()
+            return true
+        }catch let error{
+            print(error)
+            return false
+        }
+    }
 }

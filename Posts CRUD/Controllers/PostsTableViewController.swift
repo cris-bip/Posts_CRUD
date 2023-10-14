@@ -53,4 +53,24 @@ class PostsTableViewController: UITableViewController {
         cell.detailTextLabel?.text = post.title
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            postService.deletePost(post: self.myPosts[indexPath.row]) {
+                self.myPosts = self.postManager.getAllPosts()
+                
+                DispatchQueue.main.async {
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                }
+            }            
+            
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
 }

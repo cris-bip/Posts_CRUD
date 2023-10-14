@@ -75,4 +75,42 @@ class PostService {
     }
     
 
+    
+    func deletePost(post: Post, completion: @escaping () -> Void){
+        let url = String(format: "https://jsonplaceholder.typicode.com/posts/%d", post.id)
+        let deletePostUrl = URL(string:url)!
+        
+        let request = NSMutableURLRequest(url: deletePostUrl)
+        request.httpMethod = "DELETE"
+        
+        let session = URLSession.shared
+        var httpResponse = HTTPURLResponse()
+        
+        let deleteTask = session.dataTask(with: request as URLRequest){data, response, error in
+            
+            if let error = error {
+                print("Error: \(error)")
+                return
+            }
+            
+            // Check response
+            guard let httpResponse = response as? HTTPURLResponse,
+                  httpResponse.statusCode == 200 else {
+                print("Invalid response")
+                httpResponse = (response as? HTTPURLResponse)!
+                print("statusCode: ", httpResponse.statusCode)
+                return
+            }
+            
+            // Delete from DB
+            let deletedPost = self.postManager.deletePost(post: post)
+            print("Post eliminado correctamente?: ", deletedPost ? "SI" : "NO")
+            
+            if(deletedPost){
+                completion()
+            }            
+        }
+        
+        deleteTask.resume()
+    }
 }
