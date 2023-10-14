@@ -17,6 +17,9 @@
 		C263F60F2ADB20D9001E102D /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C263F60E2ADB20D9001E102D /* PostService.swift */; };
 		C263F6132ADB21D5001E102D /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C263F6122ADB21D5001E102D /* PostModel.swift */; };
 		C263F6182ADB2B91001E102D /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C263F6172ADB2B91001E102D /* AppConstants.swift */; };
+		C263F61B2ADB33BA001E102D /* Post+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C263F61A2ADB33BA001E102D /* Post+CoreDataClass.swift */; };
+		C263F61D2ADB3455001E102D /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C263F61C2ADB3455001E102D /* Post+CoreDataProperties.swift */; };
+		C263F6212ADB3945001E102D /* PostDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C263F6202ADB3945001E102D /* PostDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		C263F60E2ADB20D9001E102D /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		C263F6122ADB21D5001E102D /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		C263F6172ADB2B91001E102D /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		C263F61A2ADB33BA001E102D /* Post+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C263F61C2ADB3455001E102D /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C263F6202ADB3945001E102D /* PostDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,9 +70,8 @@
 		C263F5EE2ADB1C1C001E102D /* Posts CRUD */ = {
 			isa = PBXGroup;
 			children = (
-				C263F6102ADB2105001E102D /* Models */,
 				C263F6082ADB1C4A001E102D /* Controllers */,
-				C263F6072ADB1C43001E102D /* Service */,
+				C263F6072ADB1C43001E102D /* Repository */,
 				C263F6062ADB1C2F001E102D /* Util */,
 				C263F6092ADB1C61001E102D /* Views */,
 				C263F5EF2ADB1C1C001E102D /* AppDelegate.swift */,
@@ -86,12 +91,13 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
-		C263F6072ADB1C43001E102D /* Service */ = {
+		C263F6072ADB1C43001E102D /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				C263F60E2ADB20D9001E102D /* PostService.swift */,
+				C263F61F2ADB3730001E102D /* LocalStorage */,
+				C263F61E2ADB3709001E102D /* Remote */,
 			);
-			path = Service;
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		C263F6082ADB1C4A001E102D /* Controllers */ = {
@@ -117,6 +123,33 @@
 				C263F6122ADB21D5001E102D /* PostModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C263F6192ADB336A001E102D /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				C263F61A2ADB33BA001E102D /* Post+CoreDataClass.swift */,
+				C263F61C2ADB3455001E102D /* Post+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		C263F61E2ADB3709001E102D /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				C263F6102ADB2105001E102D /* Models */,
+				C263F60E2ADB20D9001E102D /* PostService.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		C263F61F2ADB3730001E102D /* LocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+				C263F6192ADB336A001E102D /* CoreData */,
+				C263F6202ADB3945001E102D /* PostDataManager.swift */,
+			);
+			path = LocalStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,11 +225,14 @@
 			files = (
 				C263F60F2ADB20D9001E102D /* PostService.swift in Sources */,
 				C263F5FA2ADB1C1C001E102D /* Posts_CRUD.xcdatamodeld in Sources */,
+				C263F61D2ADB3455001E102D /* Post+CoreDataProperties.swift in Sources */,
 				C263F6182ADB2B91001E102D /* AppConstants.swift in Sources */,
 				C263F60D2ADB1F0F001E102D /* PostsTableViewController.swift in Sources */,
 				C263F5F02ADB1C1C001E102D /* AppDelegate.swift in Sources */,
+				C263F61B2ADB33BA001E102D /* Post+CoreDataClass.swift in Sources */,
 				C263F6132ADB21D5001E102D /* PostModel.swift in Sources */,
 				C263F5F22ADB1C1C001E102D /* SceneDelegate.swift in Sources */,
+				C263F6212ADB3945001E102D /* PostDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

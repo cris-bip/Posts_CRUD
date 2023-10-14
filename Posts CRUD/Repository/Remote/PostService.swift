@@ -10,6 +10,12 @@ import UIKit
 class PostService {
     private var posts : [PostModel] = []
     
+    let postManager = PostDataManager(context: (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
+    
+    func getAllPosts() -> [PostModel] {
+        return posts
+    }
+    
     func getPost(atIndex index: Int) -> PostModel{
         return posts[index]
     }
@@ -51,7 +57,10 @@ class PostService {
                 
                 for post in decodedResponse{
                     self.posts.append(post)
-                    print("Post ID: ", post.id)
+                    
+                    let post = self.postManager.savePost(userId: Int16(post.userId), id: Int16(post.id), title: post.title, body: post.title)
+                    
+                    print("Post guardado: ", post!.id)
                 }
                 
             }catch let error{

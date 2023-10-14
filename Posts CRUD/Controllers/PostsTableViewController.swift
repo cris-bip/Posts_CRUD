@@ -8,15 +8,27 @@
 import UIKit
 
 class PostsTableViewController: UITableViewController {
+    
+    var myPosts : [Post] = []
 
     let postService = PostService()
     
+    let postManager = PostDataManager(context: (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        postService.loadPost{
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
+        
+        if(postManager.hasPosts()){
+            // Consulta de la BD
+            myPosts = postManager.getPosts()
+        }else{
+            // Lee los post del WS
+            postService.loadPost{
+                self.myPosts = self.postManager.getAllPosts()
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             }
         }
     }
@@ -28,15 +40,15 @@ class PostsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return postService.countPosts()
+        return myPosts.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: AppConstants.POST_CELL_REUSE_ID, for: indexPath) as UITableViewCell
         
-        let post = postService.getPost(atIndex: indexPath.row)
-        
+        let post = myPosts[indexPath.row]
+
         cell.textLabel?.text = String(format: "Post #%d", post.id)
         cell.detailTextLabel?.text = post.title
         return cell
