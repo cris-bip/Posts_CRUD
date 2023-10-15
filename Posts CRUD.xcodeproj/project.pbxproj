@@ -20,6 +20,7 @@
 		C263F61B2ADB33BA001E102D /* Post+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C263F61A2ADB33BA001E102D /* Post+CoreDataClass.swift */; };
 		C263F61D2ADB3455001E102D /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C263F61C2ADB3455001E102D /* Post+CoreDataProperties.swift */; };
 		C263F6212ADB3945001E102D /* PostDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C263F6202ADB3945001E102D /* PostDataManager.swift */; };
+		C263F6252ADB7DF6001E102D /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C263F6242ADB7DF6001E102D /* PostDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		C263F61A2ADB33BA001E102D /* Post+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C263F61C2ADB3455001E102D /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C263F6202ADB3945001E102D /* PostDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDataManager.swift; sourceTree = "<group>"; };
+		C263F6242ADB7DF6001E102D /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				C263F60C2ADB1F0F001E102D /* PostsTableViewController.swift */,
+				C263F6242ADB7DF6001E102D /* PostDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				C263F60F2ADB20D9001E102D /* PostService.swift in Sources */,
 				C263F5FA2ADB1C1C001E102D /* Posts_CRUD.xcdatamodeld in Sources */,
 				C263F61D2ADB3455001E102D /* Post+CoreDataProperties.swift in Sources */,
+				C263F6252ADB7DF6001E102D /* PostDetailViewController.swift in Sources */,
 				C263F6182ADB2B91001E102D /* AppConstants.swift in Sources */,
 				C263F60D2ADB1F0F001E102D /* PostsTableViewController.swift in Sources */,
 				C263F5F02ADB1C1C001E102D /* AppDelegate.swift in Sources */,

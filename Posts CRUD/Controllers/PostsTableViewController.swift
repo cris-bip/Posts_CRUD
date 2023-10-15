@@ -15,6 +15,9 @@ class PostsTableViewController: UITableViewController {
     
     let postManager = PostDataManager(context: (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
     
+    var newTitle : String?
+    var newBody : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +35,13 @@ class PostsTableViewController: UITableViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navController =  segue.destination as! UINavigationController
+        let detailController = navController.viewControllers.first as! PostDetailViewController
+        
+        detailController.post = sender as? Post                
+    }
 
     // MARK: - Table view data source
 
@@ -45,7 +55,7 @@ class PostsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: AppConstants.POST_CELL_REUSE_ID, for: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: AppConstants.POST_CELL_REUSE_ID, for: indexPath)
         
         let post = myPosts[indexPath.row]
 
@@ -71,6 +81,21 @@ class PostsTableViewController: UITableViewController {
             
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedPost = myPosts[indexPath.row]
+        
+        self.performSegue(withIdentifier: AppConstants.SHOW_DETAIL_SEGUE_ID, sender: selectedPost)
+    }
+    
+    @IBAction func unwindToPostsTable(segue: UIStoryboardSegue){
+        // Update Cell
+        postService.updatePost(post: myPosts[tableView.indexPathForSelectedRow!.row], newTitle: newTitle!, newBody: newBody!) {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
 }

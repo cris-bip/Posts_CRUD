@@ -79,4 +79,18 @@ class PostDataManager{
             return false
         }
     }
+    
+    func updatePost(post : Post, title: String, body: String) -> Post?{
+        post.title = title
+        post.body = body
+        
+        do{
+            try context.save()
+        }catch let error{
+            print(error)
+            return nil
+        }
+        
+        return post
+    }
 }

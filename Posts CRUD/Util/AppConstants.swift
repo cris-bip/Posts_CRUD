@@ -9,4 +9,5 @@ import Foundation
 
 struct AppConstants {
     static let POST_CELL_REUSE_ID = "postCell"
+    static let SHOW_DETAIL_SEGUE_ID = "showDetailSegue"
 }
